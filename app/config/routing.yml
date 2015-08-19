@@ -1,3 +1,11 @@
+acanales_recetas:
+    resource: "@acanalesRecetasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acanalesprueba:
+    resource: "@acanalespruebaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

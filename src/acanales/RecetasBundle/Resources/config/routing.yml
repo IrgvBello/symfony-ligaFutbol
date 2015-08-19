@@ -1,0 +1,8 @@
+acanales_recetas_homepage:
+    path:     /recipes/{id}
+    defaults: { _controller: acanalesRecetasBundle:Default:index }
+	requirements:
+        id:  \d+
+acanales_recetas_list:
+    path:     /receta/{nombre}
+    defaults: { _controller: acanalesRecetasBundle:Default:list }

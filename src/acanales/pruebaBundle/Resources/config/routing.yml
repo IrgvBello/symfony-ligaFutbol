@@ -1,0 +1,6 @@
+acanalesprueba_homepage:
+    path:     /hola/{name}
+    defaults: { _controller: acanalespruebaBundle:Default:index }
+acanalesprueba_list:
+    path:     /hola2/{name}
+    defaults: { _controller: acanalespruebaBundle:Default:list }
