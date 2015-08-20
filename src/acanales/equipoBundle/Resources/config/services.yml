@@ -1,0 +1,4 @@
+services:
+#    acanalesequipo.example:
+#        class: acanales\equipoBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

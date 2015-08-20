@@ -1,3 +1,7 @@
+acanalesequipo:
+    resource: "@acanalesequipoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 acanales_recetas:
     resource: "@acanalesRecetasBundle/Resources/config/routing.yml"
     prefix:   /

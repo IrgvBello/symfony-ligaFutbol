@@ -1,0 +1,9 @@
+acanalesequipo_homepage:
+    path:     /equipo/{nombre}
+    defaults: { _controller: acanalesequipoBundle:Default:index }
+acanalesequipo_equipocreado:
+    path:     /equipo-creado
+    defaults: { _controller: acanalesequipoBundle:Default:equipoCreado }	
+acanalesequipo_crearequipo:
+    path:     /crear-equipo
+    defaults: { _controller: acanalesequipoBundle:Default:crearEquipo }	
