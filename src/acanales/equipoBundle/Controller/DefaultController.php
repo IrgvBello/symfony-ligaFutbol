@@ -28,7 +28,9 @@ class DefaultController extends Controller
 		$em->persist($equipo);
 		$em->flush();
 		
-		
 		return $this->redirect($this->generateUrl('acanalesequipo_equipocreado'));
     }
+	public function bootstrapAction(){
+		 return $this->render('acanalesequipoBundle:Default:bootstrap.html.twig');
+	}
 }

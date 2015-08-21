@@ -7,3 +7,6 @@ acanalesequipo_equipocreado:
 acanalesequipo_crearequipo:
     path:     /crear-equipo
     defaults: { _controller: acanalesequipoBundle:Default:crearEquipo }	
+acanalesequipo_bootstrap:
+    path:     /bootstrap
+    defaults: { _controller: acanalesequipoBundle:Default:bootstrap }	
