@@ -1,0 +1,7 @@
+acanales\equipoBundle\Entity\Equipos:
+	properties:
+	nombre:
+	- NotBlank: {message:"El titulo no puede estar vacío"}
+	- Length:
+	min: 5
+	minMessage: "El titulo debe tener {{ limit }} caracteres de largo"
