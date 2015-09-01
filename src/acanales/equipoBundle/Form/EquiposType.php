@@ -6,6 +6,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
 class EquiposType extends AbstractType
 {
     /**
@@ -15,7 +18,12 @@ class EquiposType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre','text')
+            ->add('nombre','text', array(
+			   'constraints' => array(
+				   new NotBlank(),
+				   new Length(array('min' => 3)),
+			   ),
+			 ))
             ->add('division','text')
             ->add('Guardar','submit')
         ;
