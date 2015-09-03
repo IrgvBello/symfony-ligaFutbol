@@ -2,17 +2,26 @@
 
 namespace acanales\equipoBundle\Model;
 
-use Doctrine\Common\Persistence\ObjetManager;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class Clasificacion{
-	private $repository;
+	private $om;
 	
-	public function __construct(ObjetManager $om){
-		$this->repository= $om->getRepository('acanalesequipoBundle:Equipos');
+	public function __construct(ObjectManager $om){
+		//$this->repository= $om->getRepository('acanalesequipoBundle:Equipos');
+		$this->om= $om;
 	}
 	public function ultimosClasificados($num){
-		return $this->repository->findAll();
-	//	return array(); //----Si devuelve el array
+		//return $this->repository->findAll();
+		
+		//****$repository = $this->getDoctrine()->getRepository("acanalesequipoBundle:Equipos");
+		//****$equipos=$repository->findAll();
+		$om = $this->om;
+		$query = $om->createQuery(
+			'SELECT a
+			FROM acanalesequipoBundle:Equipos a')->setMaxResults($num);
+		
+		return $equipos = $query->getResult();
 	}
 }
 

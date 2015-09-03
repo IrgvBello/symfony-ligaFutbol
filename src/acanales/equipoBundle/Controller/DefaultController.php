@@ -53,16 +53,7 @@ class DefaultController extends Controller
 	}
 	
 	public function equiposAction(){
-		
-		//$repository = $this->getDoctrine()->getRepository("acanalesequipoBundle:Equipos");
-		//$equipos=$repository->findAll();
-		$em = $this->getDoctrine()->getManager();
-		$query = $em->createQuery(
-			'SELECT a
-			FROM acanalesequipoBundle:Equipos a')->setMaxResults(5);
-		
-		$equipos = $query->getResult();
-		
+
 		$equipos=$this->get('equipos.clasificacion')->ultimosClasificados(5);
 
 		return $this->render("acanalesequipoBundle:Default:equipos.html.twig",array("equipos"=>$equipos));
