@@ -18,6 +18,9 @@ class DefaultController extends Controller
 	
 	public function equipoCreadoAction()
     {
+		  $logger = $this->get('logger');
+		  $logger->info('Equipo creado satisfactoriamente');
+		  
         return new Response('<html><body><h2>Equipo creado</h2></body></html>');
     }
 	
@@ -34,7 +37,11 @@ class DefaultController extends Controller
 		return $this->redirect($this->generateUrl('acanalesequipo_equipocreado'));
     }*/
 	public function crearEquipoAction()
-    {
+    {		
+	
+		  $logger = $this->get('logger');
+		  $logger->info('Crear equipo');
+		  
 		$equipo = new Equipos();
 		$form=$this->createForm(new EquiposType(), $equipo);
 		
@@ -47,6 +54,7 @@ class DefaultController extends Controller
 				{
 					return $this->redirect($this->generateURL('acanalesequipo_equipocreado'));
 				}
+			  $logger->info('Error en la validación al crear equipo');
 			}
 			
 	     return $this->render("acanalesequipoBundle:Default:formulario.html.twig",array("form"=>$form->createView()));
