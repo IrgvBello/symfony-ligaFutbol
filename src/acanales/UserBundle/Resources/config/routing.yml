@@ -1,0 +1,9 @@
+acanales_user_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: acanalesUserBundle:Default:index }
+acanales_user_crearUsuario:
+    path:     /crear-usuario
+    defaults: { _controller: acanalesUserBundle:Default:crearUsuario }
+acanales_user_editarUsuario:
+    path:     /editar-usuario
+    defaults: { _controller: acanalesUserBundle:Default:editarUsuario }	

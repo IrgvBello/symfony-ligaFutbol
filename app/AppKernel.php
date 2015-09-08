@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new acanales\pruebaBundle\acanalespruebaBundle(),
             new acanales\RecetasBundle\acanalesRecetasBundle(),
             new acanales\equipoBundle\acanalesequipoBundle(),
+            new acanales\UserBundle\acanalesUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

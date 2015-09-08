@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response; //Para Response
 use acanales\equipoBundle\Entity\Equipos;//Entidad equipo
 use acanales\equipoBundle\Form\EquiposType;//Formulario
+use Symfony\Component\Security\core\SecurityContext;//Formulario login
 
 
 
@@ -70,5 +71,4 @@ class DefaultController extends Controller
 	public function bootstrapAction(){
 		 return $this->render('acanalesequipoBundle:Default:bootstrap.html.twig');
 	}
-	
 }

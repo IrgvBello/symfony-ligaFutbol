@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<h2>Editar Usuario</h2>
+
+	<form action="" method="post" {{ form_enctype(form) }}>
+
+	    {{ form_widget(form) }}
+
+	    {{ form_errors(form) }}
+
+	 </form>
+	
+	
+{% endblock %}
+

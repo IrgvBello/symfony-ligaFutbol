@@ -1,0 +1,4 @@
+services:
+#    acanales_user.example:
+#        class: acanales\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
