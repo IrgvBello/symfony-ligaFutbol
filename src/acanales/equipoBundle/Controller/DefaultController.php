@@ -14,7 +14,9 @@ class DefaultController extends Controller
 {
     public function indexAction($nombre)
     {
+		
         return $this->render('acanalesequipoBundle:Default:index.html.twig', array('nombre' => $nombre));
+		
     }
 	
 	public function equipoCreadoAction()

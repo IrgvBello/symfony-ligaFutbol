@@ -5,5 +5,8 @@ acanales_user_crearUsuario:
     path:     /crear-usuario
     defaults: { _controller: acanalesUserBundle:Default:crearUsuario }
 acanales_user_editarUsuario:
-    path:     /editar-usuario
+    path:     /editar-usuario/{id}
     defaults: { _controller: acanalesUserBundle:Default:editarUsuario }	
+acanales_user_gestionUsuarios:
+    path:     /gestion-usuarios
+    defaults: { _controller: acanalesUserBundle:Default:gestionUsuarios }	

@@ -57,12 +57,6 @@ class User implements UserInterface
      */
     private $roles;
 	
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="status", type="integer")
-     */
-    private $status;
 	
 
     /**
@@ -192,28 +186,6 @@ class User implements UserInterface
         return explode(' ',$this->roles);
     }
 	
-	/**
-     * Set status
-     *
-     * @param string $status
-     * @return User
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string 
-     */
-    public function getStatus()
-    {
-        return explode(' ',$this->status);
-    }	
 	
 	/******************/
    public function eraseCredentials()

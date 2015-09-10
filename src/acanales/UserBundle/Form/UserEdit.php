@@ -24,22 +24,20 @@ class UserEdit extends AbstractType
 				   new NotBlank(),
 				   new Length(array('min' => 3)),
 			   ),
+			   'disabled'    => true,
 			 ))
             ->add('username','text', array(
 			   'constraints' => array(
 				   new NotBlank(),
 				   new Length(array('min' => 3)),
 			   ),
+			   'disabled'    => true,
 			 ))
-            ->add('password','password', array(
-			   'constraints' => array(
-				   new NotBlank(),
-				   new Length(array('min' => 3)),
-			   ),
-			 ))
-			->add('status','integer', array('attr' => array('style' => 'display: none') ) )
+			->add('roles', 'text', array(
+			    'property_path' => 'roles[0]',
+			))
 			
-			->add('Nuevo usuario','submit')
+			->add('Guardar','submit')
         ;
     }
     

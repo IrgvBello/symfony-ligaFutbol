@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<h2>Gestión usuarios</h2>
+	<table>
+	<tr>
+		<th>ID</th>
+		<th>USERNAME</th>
+		<th>ROLES</th>	
+		<th></th>			
+	</tr>
+	{% for usuario in usuarios %}
+		<tr>
+		   <td>{{usuario.id}}</td>
+		   <td>{{usuario.username}}</td>
+		   <td>
+		   {% if usuario.getRoles() !='ROLE_USER ' %}
+		   		{{usuario.roles[0]}}
+			{% endif %}
+			</td>
+			<td>
+				<a href="{{ 
+				   path( 
+					  'acanales_user_editarUsuario', 
+					 { 'id': usuario.id }
+				   ) 
+				  }}">
+				   Editar
+				</a>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+	
+{% endblock %}
+

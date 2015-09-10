@@ -1,9 +1,11 @@
 acanalesequipo_homepage:
-    path:     /equipo/{nombre}
-    defaults: { _controller: acanalesequipoBundle:Default:index }
+    path:     /{_locale}/equipo/{nombre}
+    defaults: { _controller: acanalesequipoBundle:Default:index, _locale:en }
 acanalesequipo_equipocreado:
-    path:     /equipo-creado
-    defaults: { _controller: acanalesequipoBundle:Default:equipoCreado }	
+    path:     /{_locale}/equipo-creado
+    defaults: { _controller: acanalesequipoBundle:Default:equipoCreado, _locale: en }	
+    requirements:
+       _locale: en|es
 acanalesequipo_crearequipo:
     path:     /crear-equipo
     defaults: { _controller: acanalesequipoBundle:Default:crearEquipo }	
