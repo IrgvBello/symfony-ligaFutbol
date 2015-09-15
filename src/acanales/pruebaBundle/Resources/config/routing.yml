@@ -4,3 +4,6 @@ acanalesprueba_homepage:
 acanalesprueba_list:
     path:     /hola2/{name}
     defaults: { _controller: acanalespruebaBundle:Default:list }
+acanalesprueba_calular:
+    path:     /calcular
+    defaults: { _controller: acanalespruebaBundle:Default:calcular }

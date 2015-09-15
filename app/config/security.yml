@@ -32,7 +32,6 @@ security:
             logout: ~
 
     access_control:
-      - {path: ^/crear-equipo, roles:ROLE_ADMIN}
       - {path: ^/editar-usuario, roles:ROLE_ADMIN}
       - {path: ^/gestion-usuarios, roles:ROLE_ADMIN}
 

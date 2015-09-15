@@ -2,3 +2,5 @@ services:
 #    acanalesprueba.example:
 #        class: acanales\pruebaBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+    calcular:
+        class: acanales\pruebaBundle\Model\Calcular
