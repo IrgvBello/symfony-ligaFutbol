@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block main %}
+<h2 class="text-center">Clasificacion</h2>
+	<table class="table">
+	<tr>
+		<th>Equipo</th>
+		<th>PJ</th>
+		<th>PG</th>
+		<th>PE</th>
+		<th>PP</th>
+		<th>PTS</th>
+	</tr>
+	{% for equipo in equipos %}
+		<tr class=clasEquipo onclick="document.location = 'equipo/{{equipo.nombre}}';">
+		   <td>
+			   	<img class="clasEscudo" src="{{ asset('uploads/images/equipo/'~ equipo.path ~'') }}" />
+		   		{{equipo.nombre}}
+			</td>
+		   <td>{{equipo.pj}}</td>
+		   <td>{{equipo.pg}}</td>
+		   <td>{{equipo.pe}}</td>
+		   <td>{{equipo.pp}}</td>
+   		   <td>{{equipo.pts}}</td>		   		   		   
+		</tr>
+	{% endfor %}
+	</table>
+	
+	
+{% endblock %}
+

@@ -1,10 +1,11 @@
 {% extends '::base.html.twig' %}
 
 {% block main %}
-<h2>Nuevo Usuario</h2>
-{% if app.request.get('creado') == "ok" %}
-	<div class="alert alert-success" role="alert">Usuario creado correctamente.</div>
+<h2>Contacto</h2>
+{% if app.request.get('envio') == "ok" %}
+	<div class="alert alert-success" role="alert">Su formulario se ha enviado correctamente.</div>
 {% endif %}
+
 	<form action="" method="post" {{ form_enctype(form) }}>
 
 	    {{ form_widget(form) }}

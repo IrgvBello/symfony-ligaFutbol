@@ -1,0 +1,63 @@
+/* MENU */
+.navbar-brand{
+	position:absolute;
+	top:0px;
+	left:10px;
+}
+#menu{
+    width: 100%;
+    text-align: center;
+}
+#menu li{
+float: none;
+      display: inline-block;
+}
+#menu a{
+	padding:8px;
+}
+/*Main*/
+#main{
+	padding-top:50px;
+	max-width:1024px;
+	margin:auto;
+}
+/*user info*/
+#user-info{
+	text-align:right;
+	margin-top:10px;
+	margin-bottom:-15px;
+}
+#user-info button{
+	margin-left:10px;
+	color:#06F;
+}
+/*detalle equipo*/
+.imgEscudo{
+	float:right;
+	max-height:250px;
+	max-width:250px;
+}
+.tabla-detalles{
+	width:50%;
+}
+/*Clasificacion*/
+.clasEquipo:hover{
+	background:#ddd;
+	cursor:pointer;
+}
+.clasEscudo{
+	max-height:40px;
+	max-width:40px;
+	display:inline-block;
+	vertical-align: middle;
+	margin-right:5px;
+}
+/*Gestion equipos*/
+.nuevoEquipo{
+	margin:10px 0;
+	float:right;
+}
+.btn-lg, .btn-group-lg > .btn{
+	padding:2px 4px;
+	font-size:13px;
+}

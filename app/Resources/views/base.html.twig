@@ -3,12 +3,60 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
+			<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.css') }}" />
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+		{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		{% block javascripts %}
+			<script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+		{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+		
+			<nav class="navbar navbar-default navbar-fixed-top">
+			  <div class="container">
+				<a class="navbar-brand" href="/">LigaFutbol</a>
+				
+				<ul id="menu" class="nav navbar-nav">
+					<li><a href="{{ path('acanalesequipo_clasificacion') }}">Clasificación</li>
+					<li><a href="#">Area privada</a></li>
+					<li><a href="{{ path('acanales_user_crearUsuario') }}">Registro</a></li>
+					<li><a href="{{ path('acanales_contacto') }}">Contacto</a></li>
+				</ul>
+
+			  </div>
+			</nav>
+			<div id="main">
+				
+			{% if app.user %}
+				{% if is_granted('ROLE_ADMIN') -%}
+					<ul class="nav nav-pills nav-justified">
+						<li class="" role="presentation"><a href="{{ path('acanales_user_gestionUsuarios') }}">Gestión Usuarios</a></li>
+						<li class="" role="presentation"><a href="{{ path('acanalesequipo_gestionEquipos') }}">Gestión Equipos</a></li>
+					</ul>
+				{% else %}
+					
+				{% endif %}
+				
+				<div id="user-info">
+					Bienvenido, <b>{{ app.user.username }}</b>
+				<a href="{{ path('acanales_user_logout') }}">		
+				<button class="btn btn-default btn-xs" type="button"><span aria-hidden="true" class="glyphicon glyphicon-log-out"></span> Desconectar</button>
+				</a>
+				</div>
+			{% else %}
+				
+			{% endif %}
+				
+				{% block main %}		
+				{% endblock %}		
+			</div>
+		
+		
+		{% endblock %}
     </body>
 	<footer>
 		<b>© Alvaro</b>

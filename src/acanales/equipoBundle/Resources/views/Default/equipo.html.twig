@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block main %}
+	<div class="page-header">
+		<h2>{{equipo.nombre}}</h2>
+	</div>
+	
+	<img class="thumbnail imgEscudo" src="{{ asset('uploads/images/equipo/'~ equipo.path ~'') }}" />
+
+	<ul class="list-group tabla-detalles">
+	  <li class="list-group-item active">
+		<span class="badge">{{equipo.pts}}</span>
+		PTS
+	  </li>	  
+	  <li class="list-group-item">
+		<span class="badge">{{equipo.pj}}</span>
+		PJ
+	  </li>
+	  <li class="list-group-item">
+		<span class="badge">{{equipo.pg}}</span>
+		PG
+	  </li>
+	  <li class="list-group-item">
+		<span class="badge">{{equipo.pe}}</span>
+		PE
+	  </li>
+	  <li class="list-group-item">
+		<span class="badge">{{equipo.pp}}</span>
+		PP
+	  </li>
+	  
+	</ul>
+
+{% endblock %}	

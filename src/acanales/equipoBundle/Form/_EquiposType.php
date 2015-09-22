@@ -1,16 +1,15 @@
 <?php
 
-namespace acanales\UserBundle\Form;
+namespace acanales\equipoBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
-class UserEdit extends AbstractType
+class EquiposType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -19,25 +18,14 @@ class UserEdit extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email','email', array(
+            ->add('nombre','text', array(
 			   'constraints' => array(
 				   new NotBlank(),
 				   new Length(array('min' => 3)),
 			   ),
-			   'disabled'    => true,
 			 ))
-            ->add('username','text', array(
-			   'constraints' => array(
-				   new NotBlank(),
-				   new Length(array('min' => 3)),
-			   ),
-			   'disabled'    => true,
-			 ))
-			->add('roles', 'text', array(
-			    'property_path' => 'roles[0]',
-			))
-		
-			->add('Guardar','submit')
+            ->add('division','text')
+            ->add('Guardar','submit')
         ;
     }
     
@@ -47,7 +35,7 @@ class UserEdit extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'acanales\UserBundle\Entity\User'
+            'data_class' => 'acanales\equipoBundle\Entity\Equipos'
         ));
     }
 
@@ -56,6 +44,6 @@ class UserEdit extends AbstractType
      */
     public function getName()
     {
-        return 'acanales_userbundle_userEdit';
+        return 'acanales_equipobundle_equipos';
     }
 }

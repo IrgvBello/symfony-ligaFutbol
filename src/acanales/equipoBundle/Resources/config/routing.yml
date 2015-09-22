@@ -1,18 +1,27 @@
-acanalesequipo_homepage:
-    path:     /{_locale}/equipo/{nombre}
-    defaults: { _controller: acanalesequipoBundle:Default:index, _locale:en }
 acanalesequipo_equipocreado:
     path:     /{_locale}/equipo-creado
     defaults: { _controller: acanalesequipoBundle:Default:equipoCreado, _locale: en }	
     requirements:
        _locale: en|es
-acanalesequipo_crearequipo:
-    path:     /crear-equipo
-    defaults: { _controller: acanalesequipoBundle:Default:crearEquipo }	
 acanalesequipo_equipos:
     path:     /equipos
     defaults: { _controller: acanalesequipoBundle:Default:equipos }	
 acanalesequipo_bootstrap:
     path:     /bootstrap
     defaults: { _controller: acanalesequipoBundle:Default:bootstrap }	
+acanalesequipo_equipo:
+    path:     /equipo/{nombre}
+    defaults: { _controller: acanalesequipoBundle:Default:equipo }		
+acanalesequipo_clasificacion:
+    path:     /clasificacion
+    defaults: { _controller: acanalesequipoBundle:Default:clasificacion }	
+acanalesequipo_crearequipo:
+    path:     /crear-equipo
+    defaults: { _controller: acanalesequipoBundle:Default:crearEquipo }	
+acanalesequipo_gestionEquipos:
+    path:     /gestion-equipos
+    defaults: { _controller: acanalesequipoBundle:Default:gestionEquipos }
+acanalesequipo_editarEquipo:
+    path:     /editar-equipo/{id}
+    defaults: { _controller: acanalesequipoBundle:Default:editarEquipo }			
 
