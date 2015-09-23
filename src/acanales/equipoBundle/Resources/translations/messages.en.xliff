@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+            <body>
+			<trans-unit id="0">
+                <source>LigaFutbol</source>
+                <target>FootballLeague</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Clasificacion</source>
+                <target>Classification</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>Area privada</source>
+                <target>Private area</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>Registro</source>
+                <target>Register</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>Contacto</source>
+                <target>Contact</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>Equipo</source>
+                <target>Team</target>
+            </trans-unit>			
+        </body>
+    </file>
+</xliff>

@@ -1,19 +1,8 @@
-acanalesequipo_equipocreado:
-    path:     /{_locale}/equipo-creado
-    defaults: { _controller: acanalesequipoBundle:Default:equipoCreado, _locale: en }	
-    requirements:
-       _locale: en|es
-acanalesequipo_equipos:
-    path:     /equipos
-    defaults: { _controller: acanalesequipoBundle:Default:equipos }	
-acanalesequipo_bootstrap:
-    path:     /bootstrap
-    defaults: { _controller: acanalesequipoBundle:Default:bootstrap }	
 acanalesequipo_equipo:
-    path:     /equipo/{nombre}
+    path:     /{_locale}/equipo/{nombre}
     defaults: { _controller: acanalesequipoBundle:Default:equipo }		
 acanalesequipo_clasificacion:
-    path:     /clasificacion
+    path:     /{_locale}/clasificacion
     defaults: { _controller: acanalesequipoBundle:Default:clasificacion }	
 acanalesequipo_crearequipo:
     path:     /crear-equipo

@@ -18,19 +18,24 @@
 		
 			<nav class="navbar navbar-default navbar-fixed-top">
 			  <div class="container">
-				<a class="navbar-brand" href="/">LigaFutbol</a>
+				<a class="navbar-brand" href="/">{% trans %}LigaFutbol{% endtrans %}</a>
 				
 				<ul id="menu" class="nav navbar-nav">
-					<li><a href="{{ path('acanalesequipo_clasificacion') }}">Clasificación</li>
-					<li><a href="#">Area privada</a></li>
-					<li><a href="{{ path('acanales_user_crearUsuario') }}">Registro</a></li>
-					<li><a href="{{ path('acanales_contacto') }}">Contacto</a></li>
+					<li><a href="{{ path('acanalesequipo_clasificacion') }}">{% trans %}Clasificacion{% endtrans %}</li>
+					<li><a href="{{ path('acanales_user_areaPrivada') }}">{% trans %}Area privada{% endtrans %}</a></li>
+					<li><a href="{{ path('acanales_user_crearUsuario') }}">{% trans %}Registro{% endtrans %}</a></li>
+					<li><a href="{{ path('acanales_contacto') }}">{% trans %}Contacto{% endtrans %}</a></li>
 				</ul>
+				
+				<div id="idioma">
+					<a href="{{ path('acanalesequipo_clasificacion',{'_locale':'es'}) }}"><img src="{{ asset('/images/es.png') }}" /></a>
+					<a href="{{ path('acanalesequipo_clasificacion',{'_locale':'en'}) }}"><img src="{{ asset('/images/en.png') }}" /></a>
+				</div>
 
 			  </div>
 			</nav>
 			<div id="main">
-				
+							
 			{% if app.user %}
 				{% if is_granted('ROLE_ADMIN') -%}
 					<ul class="nav nav-pills nav-justified">

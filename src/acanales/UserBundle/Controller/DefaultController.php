@@ -93,16 +93,6 @@ class DefaultController extends Controller
 	}
 	
 	public function contactoAction(){
-
-	    $message = \Swift_Message::newInstance()
-        ->setSubject('Hello Email')
-        ->setFrom('send@example.com')
-        ->setTo('alvrc3@gmail.com')
-        ->setBody('aaaaaaaaaaaa');
-		
-	    $this->get('mailer')->send($message);
-
-		/**/
 		$contacto = new Contacto();
 		$form=$this->createForm(new ContactoType(), $contacto);
 
@@ -113,7 +103,24 @@ class DefaultController extends Controller
 			{
 				if($form->isValid())
 				{
-					
+						  $nombre = $form->get('nombre')->getData();
+  						  $mail = $form->get('email')->getData();
+  						  $asunto = $form->get('asunto')->getData();						  
+						  $mensaje= $form->get('mensaje')->getData();
+						  
+						  $mensaje="<h2>".$asunto."</h2><h4>".$nombre."</h4>".$mensaje;
+						  
+						  
+						/*Mandar mail*/
+						$message = \Swift_Message::newInstance()
+						->setSubject('Hello Email')
+						->setFrom($mail)
+						->setTo('alvrc3@gmail.com')
+						->setBody($mensaje);
+						
+						$this->get('mailer')->send($message);
+						/**/
+
 					$em=$this->getDoctrine()->getManager();
 					$em->persist($contacto);
 					$em->flush();
@@ -124,4 +131,8 @@ class DefaultController extends Controller
 			
 	     return $this->render("acanalesUserBundle:Default:contacto.html.twig",array("form"=>$form->createView()));
 	    }
+	public function areaPrivadaAction()
+    {
+        return $this->render('acanalesUserBundle:Default:areaPrivada.html.twig');
+    }
 }

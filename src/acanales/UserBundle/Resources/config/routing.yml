@@ -1,8 +1,8 @@
 acanales_user_homepage:
-    path:     /hello/{name}
+    path:     /{_locale}/hello/{name}
     defaults: { _controller: acanalesUserBundle:Default:index }
 acanales_user_crearUsuario:
-    path:     /registro
+    path:     /{_locale}/registro
     defaults: { _controller: acanalesUserBundle:Default:crearUsuario }
 acanales_user_editarUsuario:
     path:     /editar-usuario/{id}
@@ -13,8 +13,11 @@ acanales_user_gestionUsuarios:
 acanales_user_eliminarUsuario:
     path:     /eliminar-usuario/{id}
     defaults: { _controller: acanalesUserBundle:Default:eliminarUsuario }		
+acanales_user_areaPrivada:
+       path:   /area-privada
+       defaults: { _controller: acanalesUserBundle:Default:areaPrivada }
 acanales_user_logout:
        pattern:   /logout
 acanales_contacto:
-    path:     /contacto
+    path:     /{_locale}/contacto
     defaults: { _controller: acanalesUserBundle:Default:contacto }

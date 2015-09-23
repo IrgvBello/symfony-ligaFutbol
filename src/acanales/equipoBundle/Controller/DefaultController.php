@@ -14,50 +14,7 @@ use Symfony\Component\Security\core\SecurityContext;//Formulario login
 
 class DefaultController extends Controller
 {
-    /*public function indexAction($nombre)
-    {
-		
-        return $this->render('acanalesequipoBundle:Default:index.html.twig', array('nombre' => $nombre));
-		
-    }
-	*/
-	public function equipoCreadoAction()
-    {
-		  $logger = $this->get('logger');
-		  $logger->info('Equipo creado satisfactoriamente');
-		  
-        return new Response('<html><body><h2>Equipo creado</h2></body></html>');
-    }
-	
-	/*public function crearEquipoAction()
-    {
-		//Crear un equipo
-		$equipo=new Equipos();
-		$equipo->setNombre("Real Madrid");
-		$equipo->setDivision("Primera");
-		$em=$this->getDoctrine()->getManager();
-		$em->persist($equipo);
-		$em->flush();
-		
-		return $this->redirect($this->generateUrl('acanalesequipo_equipocreado'));
-    }*/
-	
-	
-	public function equiposAction(){
-
-		$equipos=$this->get('equipos.clasificacion')->ultimosClasificados(5);
-
-		return $this->render("acanalesequipoBundle:Default:equipos.html.twig",array("equipos"=>$equipos));
-	}
-	
-	public function bootstrapAction(){
-		 return $this->render('acanalesequipoBundle:Default:bootstrap.html.twig');
-	}
-	/**************************************/
-/**************************************/
-/**************************************/
-/**************************************/
-	/**************************************/	
+   
 	public function equipoAction($nombre)
     {
 		$equipo = $this->getDoctrine()
@@ -68,6 +25,7 @@ class DefaultController extends Controller
 		
     }
 	public function clasificacionAction(){
+		
 		$equipos=array();		
 		
 		$em = $this->getDoctrine()->getManager();

@@ -3,9 +3,13 @@
     <file source-language="es" datatype="plaintext" original="file.ext">
             <body>
             <trans-unit id="1">
-                <source>Clasificacion</source>
-                <target>Clasificacion</target>
+                <source>Username</source>
+                <target>Nombre usuario</target>
             </trans-unit>
+            <trans-unit id="2">
+                <source>Password</source>
+                <target>Contraseña</target>
+            </trans-unit>			
         </body>
     </file>
 </xliff>

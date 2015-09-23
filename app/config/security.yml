@@ -32,8 +32,14 @@ security:
             logout: ~
 
     access_control:
-      - {path: ^/editar-usuario, roles:ROLE_ADMIN}
+      - {path: ^/area-privada, roles:[ROLE_ADMIN, ROLE_USER]}
+      - {path: ^/crear-equipo, roles:[ROLE_ADMIN, ROLE_USER]}
+
+      - {path: ^/gestion-equipos, roles:ROLE_ADMIN}
+      - {path: ^/editar-equipo, roles:ROLE_ADMIN}
       - {path: ^/gestion-usuarios, roles:ROLE_ADMIN}
+      - {path: ^/editar-usuario, roles:ROLE_ADMIN}
+      - {path: ^/eliminar-usuario/^, roles:ROLE_ADMIN}
 
     encoders:
         #Symfony\Component\Security\Core\User\User: plaintext

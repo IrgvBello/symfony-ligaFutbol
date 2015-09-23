@@ -1,18 +1,24 @@
 {% extends '::base.html.twig' %}
 
 {% block main %}
-<h2>Contacto</h2>
+<h2>{% trans %}Contacto{% endtrans %}</h2>
 {% if app.request.get('envio') == "ok" %}
 	<div class="alert alert-success" role="alert">Su formulario se ha enviado correctamente.</div>
 {% endif %}
 
+	<img id="imgContacto" src="{{ asset('images/contacto.png') }}" />
+	
 	<form action="" method="post" {{ form_enctype(form) }}>
 
 	    {{ form_widget(form) }}
+		
 
 	    {{ form_errors(form) }}
 
 	 </form>
+	 
+	 
+	 
 	
 	
 {% endblock %}
